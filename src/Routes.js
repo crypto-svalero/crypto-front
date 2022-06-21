@@ -4,6 +4,8 @@ import Router from 'vue-router';
 import Layout from '@/components/Layout/Layout';
 import Typography from '@/pages/Typography/Typography';
 import Tables from '@/pages/Tables/Tables';
+import Cryptos from '@/pages/Cryptos/Cryptos';
+import Products from '@/pages/Products/Products';
 import Notifications from '@/pages/Notifications/Notifications';
 import Icons from '@/pages/Icons/Icons';
 import Maps from '@/pages/Maps/Maps';
@@ -46,6 +48,16 @@ export default new Router({
           path: 'tables',
           name: 'Typography',
           component: Tables,
+        },
+        {
+          path: 'cryptos',
+          name: 'Typography',
+          component: Cryptos,
+        },
+        {
+          path: 'products',
+          name: 'Typography',
+          component: Products,
         },
         {
           path: 'notifications',
