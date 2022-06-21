@@ -6,6 +6,9 @@ import Typography from '@/pages/Typography/Typography';
 import Tables from '@/pages/Tables/Tables';
 import Cryptos from '@/pages/Cryptos/Cryptos';
 import Products from '@/pages/Products/Products';
+import Fiats from '@/pages/Fiats/Fiats';
+import NFTs from '@/pages/NFTs/NFTs';
+import Games from '@/pages/Games/Games';
 import Notifications from '@/pages/Notifications/Notifications';
 import Icons from '@/pages/Icons/Icons';
 import Maps from '@/pages/Maps/Maps';
@@ -58,6 +61,21 @@ export default new Router({
           path: 'products',
           name: 'Typography',
           component: Products,
+        },
+        {
+          path: 'fiats',
+          name: 'Typography',
+          component: Fiats,
+        },
+        {
+          path: 'games',
+          name: 'Typography',
+          component: Games,
+        },
+        {
+          path: 'nfts',
+          name: 'Typography',
+          component: NFTs,
         },
         {
           path: 'notifications',

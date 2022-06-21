@@ -4,7 +4,7 @@
     :class="{sidebar: true}"
   >
     <header class="logo">
-      <router-link to="/app">Crypto <span class="fw-bold">App</span></router-link>
+      <router-link to="/app">Proyect <span class="fw-b  old">Cryptos</span></router-link>
     </header>
 
     <ul class="nav">
@@ -21,7 +21,7 @@
       <NavLink
         :activeItem="activeItem"
         header="Products"
-        link="/app/produc ts"
+        link="/app/products"
         iconName="flaticon-network-1"
         index="home"
         isHeader
