@@ -8,7 +8,7 @@ import Notifications from '@/pages/Notifications/Notifications';
 import Icons from '@/pages/Icons/Icons';
 import Maps from '@/pages/Maps/Maps';
 import Charts from '@/pages/Charts/Charts';
-import Dashboard from '@/pages/Visits/Visits';
+import Home from '@/pages/Visits/Visits';
 import Login from '@/pages/Login/Login';
 import ErrorPage from '@/pages/Error/Error';
 
@@ -33,9 +33,9 @@ export default new Router({
       component: Layout,
       children: [
         {
-          path: 'dashboard',
-          name: 'Dashboard',
-          component: Dashboard,
+          path: 'home',
+          name: 'Home',
+          component: Home,
         },
         {
           path: 'typography',
