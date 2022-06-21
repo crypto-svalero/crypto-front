@@ -5,7 +5,7 @@
       <b-col>
         <Widget
           title="<h5>Table <span class='fw-semi-bold'>Products</span></h5>"
-          customHeader settings close
+          customHeader
         >
           <div class="table-resposive">
             <table class="table"> 

@@ -2,10 +2,6 @@
   <b-navbar toggleable="md" class="app-header d-print-none">
     <b-navbar-nav class="navbar-nav-mobile ml-auto">
         <b-nav-form class="d-sm-down-none mr-3">
-          <b-input-group class="input-group-transparent search-group">
-            <b-input-group-text slot="prepend"><i class="fi flaticon-search-2"></i></b-input-group-text>
-            <b-input class="input-transparent" id="search-input" placeholder="Search Dashboard" />
-          </b-input-group>
         </b-nav-form>
       </b-navbar-nav>
   </b-navbar>

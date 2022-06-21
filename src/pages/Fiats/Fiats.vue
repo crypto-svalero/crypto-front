@@ -1,10 +1,10 @@
 <template>
   <div class="tables-basic">
-    <h2 class="page-title">Tables - <span class="fw-semi-bold">Cryptos</span></h2>
+    <h2 class="page-title">Tables - <span class="fw-semi-bold">Fiats</span></h2>
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>Cryptos</span></h5>"
+          title="<h5>Table <span class='fw-semi-bold'>Fiats</span></h5>"
           customHeader
         >
           <div class="table-resposive">
@@ -16,8 +16,6 @@
                   <th>Image</th>
                   <th>Name</th>
                   <th class="hidden-sm-down">Value</th>
-                  <th class="hidden-sm-down">Last Value</th>
-                  <th class="hidden-sm-down">Difference</th>
                   <th class="hidden-sm-down">Last Modified Date</th>
                 </tr>
               </thead>
@@ -33,9 +31,8 @@
                   <td>
                     {{row.name}}
                   </td>
+                  <td><a target="_blank" :href="row.link">{{row.textoLink}}</a></td>
                   <td>{{row.value}}</td>
-                  <td>{{row.lastValue}}</td>
-                  <td>{{row.diff}}</td>
                   <td>{{row.date}}</td>
                 </tr>
               </tbody>
@@ -53,23 +50,21 @@ import Widget from '@/components/Widget/Widget';
 import Sparklines from '../../components/Sparklines/Sparklines'
 
 export default {
-  name: 'Cryptos',
+  name: 'Fiats',
   components: { Widget, Sparklines },
   data() {
     return {
       tableStyles: [
         {
           id: 1,
-          picture: 'https://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png', // eslint-disable-line global-require
-          name: 'Bitcoin',  
-          value: 24,
-          lastValue: 12,
-          diff: this.value - this.lastValue,
-          date: new Date('September 14, 2018')        
+          picture: 'https://pngimg.com/uploads/dollar_sign/dollar_sign_PNG5.png',
+          name: 'Dollar',  
+          value: 1,
+          date: new Date('September 14, 2018')
         },
       ],
     };
-  }, 
+  },
   methods: {
     parseDate(date) {
       const dateSet = date.toDateString().split(' ');
@@ -79,4 +74,4 @@ export default {
 };
 </script>
 
-<style src="./Cryptos.scss" lang="scss" scoped />
+<style src="./Fiats.scss" lang="scss" scoped />

@@ -1,10 +1,10 @@
 <template>
   <div class="tables-basic">
-    <h2 class="page-title">Tables - <span class="fw-semi-bold">Cryptos</span></h2>
+    <h2 class="page-title">Tables - <span class="fw-semi-bold">Games</span></h2>
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>Cryptos</span></h5>"
+          title="<h5>Table <span class='fw-semi-bold'>Games</span></h5>"
           customHeader
         >
           <div class="table-resposive">
@@ -12,31 +12,27 @@
               <thead>
                 <tr>
                   <th class="hidden-sm-down">#</th>
-                  <th class="hidden-sm-down">Fav</th>
                   <th>Image</th>
                   <th>Name</th>
+                  <th class="hidden-sm-down">Link</th>
                   <th class="hidden-sm-down">Value</th>
-                  <th class="hidden-sm-down">Last Value</th>
-                  <th class="hidden-sm-down">Difference</th>
                   <th class="hidden-sm-down">Last Modified Date</th>
+                  <th class="hidden-sm-down">Active</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="row in tableStyles" :key="row.id">
                   <td>{{row.id}}</td>
-                  <td class="star-rating">
-                    <a href="#">★</a>
-                  </td>
                   <td class="imageIcon">
                     <img class="img-rounded" :src="row.picture" alt="" height="50" />
                   </td>
                   <td>
                     {{row.name}}
                   </td>
+                  <td><a target="_blank" :href="row.link">{{row.textoLink}}</a></td>
                   <td>{{row.value}}</td>
-                  <td>{{row.lastValue}}</td>
-                  <td>{{row.diff}}</td>
                   <td>{{row.date}}</td>
+                  <td>{{row.active}}</td>
                 </tr>
               </tbody>
             </table>
@@ -53,23 +49,24 @@ import Widget from '@/components/Widget/Widget';
 import Sparklines from '../../components/Sparklines/Sparklines'
 
 export default {
-  name: 'Cryptos',
+  name: 'Games',
   components: { Widget, Sparklines },
   data() {
     return {
       tableStyles: [
         {
           id: 1,
-          picture: 'https://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png', // eslint-disable-line global-require
-          name: 'Bitcoin',  
+          picture: 'https://i.blogs.es/42332f/axie/1366_2000.jpg',
+          textoLink: 'Click Here',
+          link: 'https://axieinfinity.com/', 
+          name: 'Axie Infinity',  
           value: 24,
-          lastValue: 12,
-          diff: this.value - this.lastValue,
-          date: new Date('September 14, 2018')        
+          date: new Date('September 14, 2018'), 
+          active: true       
         },
       ],
     };
-  }, 
+  },
   methods: {
     parseDate(date) {
       const dateSet = date.toDateString().split(' ');
@@ -79,4 +76,4 @@ export default {
 };
 </script>
 
-<style src="./Cryptos.scss" lang="scss" scoped />
+<style src="./Games.scss" lang="scss" scoped />
