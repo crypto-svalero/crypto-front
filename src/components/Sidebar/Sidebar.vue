@@ -10,9 +10,49 @@
     <ul class="nav">
       <NavLink
         :activeItem="activeItem"
-        header="Homepage"
-        link="/app/home"
-        iconName="flaticon-home-3"
+        header="Cryptos"
+        link="/app/cryptos"
+        iconName="flaticon-list-2"
+        index="home"
+        isHeader
+      />
+    </ul>
+    <ul class="nav">
+      <NavLink
+        :activeItem="activeItem"
+        header="Products"
+        link="/app/produc ts"
+        iconName="flaticon-network-1"
+        index="home"
+        isHeader
+      />
+    </ul>
+    <ul class="nav">
+      <NavLink
+        :activeItem="activeItem"
+        header="Fiats"
+        link="/app/fiats"
+        iconName="flaticon-shopping-bag"
+        index="home"
+        isHeader
+      />
+    </ul>
+    <ul class="nav">
+      <NavLink
+        :activeItem="activeItem"
+        header="Games"
+        link="/app/games"
+        iconName="flaticon-layers-2"
+        index="home"
+        isHeader
+      />
+    </ul>
+    <ul class="nav">
+      <NavLink
+        :activeItem="activeItem"
+        header="NFTs"
+        link="/app/nfts"
+        iconName="flaticon-extra"
         index="home"
         isHeader
       />

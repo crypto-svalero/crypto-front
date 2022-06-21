@@ -1,6 +1,6 @@
 <template>
   <div class="visits-page">
-    <h1 class="page-title">Dashboard
+    <h1 class="page-title">Crypto List
     </h1>
     <b-row>
       <b-col lg="7">
