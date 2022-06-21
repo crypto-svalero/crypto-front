@@ -76,7 +76,7 @@
       </a>
     </div>
     <div v-if="customControls" v-html="customControls" ref="customControlsRef" class="widgetControls widget-controls"></div>
-    <div :class="`widgetBody widget-body ${bodyClass}`" ref="widgetBodyRef"
+    <div :class="`widgetBody widget-body ${isColumnSwapped ? 'widget--swapped' : ''} ${bodyClass}`" ref="widgetBodyRef"
           :style="{display: state === 'collapse' ? 'none' : ''}"
     >
       <Loader v-if="fetchingData && showLoader" :class="'widget-loader'" :size="40"></Loader>
@@ -96,6 +96,7 @@ export default {
     }
   },
   props: {
+    isColumnSwapped: { type: Boolean, default: false },
     customHeader: { type: Boolean, default: false },
     tooltipPlacement: { default: 'top' },
     showTooltip: { type: Boolean, default: false },

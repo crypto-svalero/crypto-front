@@ -8,7 +8,7 @@ import Notifications from '@/pages/Notifications/Notifications';
 import Icons from '@/pages/Icons/Icons';
 import Maps from '@/pages/Maps/Maps';
 import Charts from '@/pages/Charts/Charts';
-import Home from '@/pages/Visits/Visits';
+import Home from '@/pages/Home/Home';
 import Login from '@/pages/Login/Login';
 import ErrorPage from '@/pages/Error/Error';
 

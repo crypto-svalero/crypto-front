@@ -16,6 +16,10 @@
   border-radius: $widget-border-radius;
   box-shadow: $widget-shadow;
 
+  &--swapped {
+    flex-direction: row-reverse;
+  }
+  
   &.loading {
     min-height: 150px;
   }
