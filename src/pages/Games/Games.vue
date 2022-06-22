@@ -4,7 +4,6 @@
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>Games</span></h5>"
           customHeader
         >
           <div class="table-resposive">
@@ -32,7 +31,12 @@
                   <td><a target="_blank" :href="row.link">{{row.textoLink}}</a></td>
                   <td>{{row.value}}</td>
                   <td>{{row.date}}</td>
-                  <td>{{row.active}}</td>
+                  <td>
+                    <label class="switch">
+                    <input type="checkbox" :checked="row.active">
+                    <span class="slider round"></span>
+                    </label>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -61,7 +65,7 @@ export default {
           link: 'https://axieinfinity.com/', 
           name: 'Axie Infinity',  
           value: 24,
-          date: new Date('September 14, 2018'), 
+          date: new Date('September 14, 2018').toDateString(), 
           active: true       
         },
       ],

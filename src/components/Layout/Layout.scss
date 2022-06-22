@@ -1,5 +1,15 @@
 @import '../../styles/app.scss';
 
+@mixin styleIcon {
+  margin:10px;
+  cursor: pointer;
+}
+
+.styleIcon{
+@include styleIcon;
+
+}
+
 .root {
   height: 100%;
   @include media-breakpoint-up('md') {
