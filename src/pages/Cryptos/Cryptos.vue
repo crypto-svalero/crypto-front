@@ -63,7 +63,7 @@ export default {
       const year = lastModifiedDate.getFullYear();
 
       return `${day}-${month}-${year}`
-    },  
+    },
   },
   computed: {
     ...mapGetters(["cryptos"]),
