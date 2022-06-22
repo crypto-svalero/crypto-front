@@ -37,20 +37,12 @@
 
 <script>
 import Widget from "@/components/Widget/Widget";
-import Map from "./components/Map/Map";
-import Calendar from "./components/Calendar/Calendar";
-import AreaChart from "./components/AreaChart/AreaChart";
-import AnimatedNumber from "animated-number-vue";
 import axios from 'axios';
 
 export default {
   name: "Visits",
   components: {
     Widget,
-    Map,
-    Calendar,
-    AreaChart,
-    AnimatedNumber,
   },
   props: {
     isColumnSwapped: Boolean,
@@ -58,7 +50,6 @@ export default {
   methods: {
     swapColumns() {
       this.isColumnSwapped = !this.isColumnSwapped;
-      console.log(axios.get('https://cryptoapisv.azurewebsites.net/Crypto'))
     },
   },
 };
