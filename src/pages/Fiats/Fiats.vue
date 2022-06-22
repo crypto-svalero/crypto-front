@@ -1,13 +1,11 @@
 <template>
   <div class="tables-basic">
-    <h2 class="page-title">Tables - <span class="fw-semi-bold">Fiats</span></h2>
+    <h2 class="page-title"><span class="fw-semi-bold">Fiats</span></h2>
     <b-row>
       <b-col>
-        <Widget
-          customHeader
-        >
+        <Widget customHeader>
           <div class="table-resposive">
-            <table class="table"> 
+            <table class="table">
               <thead>
                 <tr>
                   <th class="hidden-sm-down">#</th>
@@ -19,55 +17,54 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="row in tableStyles" :key="row.id">
-                  <td>{{row.id}}</td>
+                <tr v-for="fiat in fiats" :key="fiat.id">
+                  <td>{{ fiat.id }}</td>
                   <td class="star-rating">
                     <a href="#">★</a>
                   </td>
                   <td class="imageIcon">
-                    <img class="img-rounded" :src="row.picture" alt="" height="50" />
+                    <img
+                      class="img-rounded"
+                      :src="fiat.image"
+                      alt=""
+                      height="50"
+                    />
                   </td>
                   <td>
-                    {{row.name}}
+                    {{ fiat.name }}
                   </td>
-                  <td>{{row.value}}</td>
-                  <td>{{row.date}}</td>
+                  <td>{{ fiat.value }}</td>
+                  <td>{{parseDate(fiat.lastModified)}}</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </Widget>
       </b-col>
-    </b-row>  
+    </b-row>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import Widget from '@/components/Widget/Widget';
-import Sparklines from '../../components/Sparklines/Sparklines'
+import { mapGetters } from 'vuex';
+import Widget from "@/components/Widget/Widget";
+import Sparklines from "../../components/Sparklines/Sparklines";
 
 export default {
-  name: 'Fiats',
+  name: "Fiats",
   components: { Widget, Sparklines },
-  data() {
-    return {
-      tableStyles: [
-        {
-          id: 1,
-          picture: 'https://pngimg.com/uploads/dollar_sign/dollar_sign_PNG5.png',
-          name: 'Dollar',  
-          value: 1,
-          date: new Date('September 14, 2018').toDateString()
-        },
-      ],
-    };
-  },
   methods: {
     parseDate(date) {
-      const dateSet = date.toDateString().split(' ');
-      return `${date.toLocaleString('en-us', { month: 'long' })} ${dateSet[2]}, ${dateSet[3]}`;
-    },  
+      const lastModifiedDate = new Date(date);
+      const day = lastModifiedDate.getDate();
+      const month = lastModifiedDate.getMonth() + 1;
+      const year = lastModifiedDate.getFullYear();
+
+      return `${day}-${month}-${year}`;
+    },
+  },
+  computed: {
+    ...mapGetters(["fiats"]),
   },
 };
 </script>
