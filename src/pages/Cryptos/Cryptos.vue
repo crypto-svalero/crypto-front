@@ -1,6 +1,6 @@
 <template>
   <div class="tables-basic">
-    <h2 class="page-title">Tables - <span class="fw-semi-bold">Cryptos</span></h2>
+    <h2 class="page-title"><span class="fw-semi-bold">Cryptos</span></h2>
     <b-row>
       <b-col>
         <Widget
@@ -21,22 +21,22 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="row in tableStyles" :key="row.id">
-                  <td>{{row.id}}</td>
+                <tr v-for="crypto in cryptos" :key="crypto.id">
+                  <td>{{crypto.id}}</td>
                   <td class="star-rating">
                     <a href="#">★</a>
                   </td>
                   <td class="imageIcon">
-                    <img class="img-rounded" :src="row.picture" alt="" height="50" />
+                    <img class="img-rounded" :src="crypto.image" :alt="crypto.name" height="50" />
                   </td>
                   <td>
-                    {{row.name}}
+                    {{crypto.name}}
                   </td>
-                  <td>{{row.value}}</td>
-                  <td>{{row.lastValue}}</td>
-                  <td v-if="(row.value - row.lastValue) > 0"><label style="color:green">{{row.value - row.lastValue}}</label></td>
-                  <td v-if="(row.value - row.lastValue) < 0"><label style="color:red">{{row.value - row.lastValue}}</label></td>
-                  <td>{{row.date}}</td>
+                  <td>{{crypto.currentValue}}</td>
+                  <td>{{crypto.lastValue}}</td>
+                  <td v-if="(crypto.currentValue - crypto.lastValue) > 0"><label style="color:green">{{crypto.currentValue - crypto.lastValue}}</label></td>
+                  <td v-if="(crypto.currentValue - crypto.lastValue) < 0"><label style="color:red">{{crypto.currentValue - crypto.lastValue}}</label></td>
+                  <td>{{parseDate(crypto.lastModified)}}</td>
                 </tr>
               </tbody>
             </table>
@@ -48,32 +48,25 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import Widget from '@/components/Widget/Widget';
 import Sparklines from '../../components/Sparklines/Sparklines'
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Cryptos',
   components: { Widget, Sparklines },
-  data() {
-    return {
-      tableStyles: [
-        {
-          id: 1,
-          picture: 'https://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png', // eslint-disable-line global-require
-          name: 'Bitcoin',  
-          value: 25874,
-          lastValue: 12567,
-          date: new Date('September 14, 2018').toDateString()      
-        },
-      ],
-    };
-  }, 
   methods: {
     parseDate(date) {
-      const dateSet = date.toDateString().split(' ');
-      return `${date.toLocaleString('en-us', { month: 'long' })} ${dateSet[2]}, ${dateSet[3]}`;
+      const lastModifiedDate = new Date(date);
+      const day = lastModifiedDate.getDate();
+      const month = lastModifiedDate.getMonth() + 1;
+      const year = lastModifiedDate.getFullYear();
+
+      return `${day}-${month}-${year}`
     },  
+  },
+  computed: {
+    ...mapGetters(["cryptos"]),
   },
 };
 </script>

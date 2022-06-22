@@ -3,11 +3,11 @@ import axios from 'axios';
 const resourceURI = "https://cryptoapisv.azurewebsites.net/Crypto";
 
 const state = {
-    crypto: []
+    cryptos: []
 };
 
 const getters = {
-    crypto: state => state.crypto
+    cryptos: state => state.cryptos
 };
 
 let config = { 
@@ -19,14 +19,14 @@ let config = {
 }
 
 const actions = {
-    async fetchCrypto({ commit }) {
+    async fetchCryptos({ commit }) {
         const response = await axios.get(resourceURI, config);    
-        commit('setCrypto', response.data);
+        commit('setCryptos', response.data);
     },
 };
 
 const mutations = {
-    setCrypto: (state, crypto) => state.crypto = crypto,
+    setCryptos: (state, cryptos) => state.cryptos = cryptos
 };
 
 export default {

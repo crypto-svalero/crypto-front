@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import layout from './modules/layout';
+import layout from './layout';
 import crypto from './modules/crypto';
 
 Vue.use(Vuex);
