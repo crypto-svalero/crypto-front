@@ -1,6 +1,6 @@
 <template>
   <div class="tables-basic">
-    <h2 class="page-title">Tables - <span class="fw-semi-bold">NFTs</span></h2>
+    <h2 class="page-title"><span class="fw-semi-bold">NFTs</span></h2>
     <b-row>
       <b-col>
         <Widget
@@ -14,27 +14,20 @@
                   <th>Image</th>
                   <th>Name</th>
                   <th class="hidden-sm-down">Value</th>
-                  <th class="hidden-sm-down">Last Modified Date</th>
-                  <th class="hidden-sm-down">Available</th>
+                  <th class="hidden-sm-down">Code</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="row in tableStyles" :key="row.id">
-                  <td>{{row.id}}</td>
+                <tr v-for="nft in nfts" :key="nft.id">
+                  <td>{{nft.id}}</td>
                   <td class="imageIcon">
-                   <a target="_blank" :href="row.picture"><img class="img-rounded" :src="row.picture" alt="" height="50" /></a>
+                   <a target="_blank" :href="nft.image"><img class="img-rounded" :src="nft.image" :alt="nft.name" height="50" /></a>
                   </td>
                   <td>
-                    {{row.name}}
+                    {{nft.name}}
                   </td>
-                  <td>{{row.value}}</td>
-                  <td>{{row.date}}</td>
-                  <td>
-                    <label class="switch">
-                    <input type="checkbox" :checked="row.active">
-                    <span class="slider round"></span>
-                    </label>
-                  </td>
+                  <td>{{nft.value}}</td>
+                  <td>{{nft.code}}</td>
                 </tr>
               </tbody>
             </table>
@@ -46,32 +39,21 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import { mapGetters } from 'vuex';
 import Widget from '@/components/Widget/Widget';
 import Sparklines from '../../components/Sparklines/Sparklines'
 
 export default {
   name: 'NFTs',
   components: { Widget, Sparklines },
-  data() {
-    return {
-      tableStyles: [
-        {
-          id: 1,
-          picture: 'https://www.alejandradeargos.com/images/Artistas/Beeple/07._meat_head.jpg',
-          name: 'Beeple',  
-          value: 15000,
-          date: new Date('September 14, 2018').toDateString(),       
-          active: true
-        },
-      ],
-    };
-  },
   methods: {
     parseDate(date) {
       const dateSet = date.toDateString().split(' ');
       return `${date.toLocaleString('en-us', { month: 'long' })} ${dateSet[2]}, ${dateSet[3]}`;
     },  
+  },
+  computed: {
+    ...mapGetters(["nfts"]),
   },
 };
 </script>
