@@ -37,7 +37,6 @@
 
 <script>
 import Widget from "@/components/Widget/Widget";
-import axios from 'axios';
 
 export default {
   name: "Visits",
