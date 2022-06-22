@@ -1,6 +1,6 @@
 <template>
   <div class="tables-basic">
-    <h2 class="page-title">Tables - <span class="fw-semi-bold">Cryptos</span></h2>
+    <h2 class="page-title"><span class="fw-semi-bold">Cryptos</span></h2>
     <b-row>
       <b-col>
         <Widget
@@ -55,27 +55,13 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'Cryptos',
   components: { Widget, Sparklines },
-  data() {
-    return {
-      tableStyles: [
-        {
-          id: 1,
-          picture: 'https://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png', // eslint-disable-line global-require
-          name: 'Bitcoin',  
-          value: 25874,
-          lastValue: 12567,
-          date: new Date('September 14, 2018').toDateString()      
-        },
-      ],
-    };
-  }, 
   methods: {
     parseDate(date) {
       const lastModifiedDate = new Date(date);
       const day = lastModifiedDate.getDate();
       const month = lastModifiedDate.getMonth() + 1;
       const year = lastModifiedDate.getFullYear();
-      
+
       return `${day}-${month}-${year}`
     },  
   },
