@@ -57,7 +57,6 @@ export default {
   methods: {
     parseDate(date) {
       const lastModifiedDate = new Date(date);
-      console.log(lastModifiedDate);
       const day = lastModifiedDate.getDate();
       const month = lastModifiedDate.getMonth() + 1;
       const year = lastModifiedDate.getFullYear();
