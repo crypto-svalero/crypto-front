@@ -8,8 +8,11 @@
     </transition>
   </div>
   <footer class="contentFooter">
-    Light Blue Vue Admin Dashboard Template - Made by <a href="https://flatlogic.com" target="_blank">Flatlogic</a>
-  </footer>
+    Follow Us on our Social Networks 
+    <img class="styleIcon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="" height="20" />
+    <img class="styleIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/973px-Twitter-logo.svg.png" alt="" height="20" />
+    <img class="styleIcon" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="" height="20" />
+    </footer>
 </div>
 </template>
 
