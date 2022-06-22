@@ -48,6 +48,7 @@
 </template>
 
 <script>
+
 import Widget from '@/components/Widget/Widget';
 import Sparklines from '../../components/Sparklines/Sparklines'
 import { mapGetters } from 'vuex';
