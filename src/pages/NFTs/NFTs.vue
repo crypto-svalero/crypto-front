@@ -4,7 +4,6 @@
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>NFTs</span></h5>"
           customHeader
         >
           <div class="table-resposive">
@@ -30,7 +29,12 @@
                   </td>
                   <td>{{row.value}}</td>
                   <td>{{row.date}}</td>
-                  <td>{{row.active}}</td>
+                  <td>
+                    <label class="switch">
+                    <input type="checkbox" :checked="row.active">
+                    <span class="slider round"></span>
+                    </label>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -57,7 +61,7 @@ export default {
           picture: 'https://www.alejandradeargos.com/images/Artistas/Beeple/07._meat_head.jpg',
           name: 'Beeple',  
           value: 15000,
-          date: new Date('September 14, 2018'),        
+          date: new Date('September 14, 2018').toDateString(),       
           active: true
         },
       ],

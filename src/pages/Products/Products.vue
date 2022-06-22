@@ -4,7 +4,6 @@
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>Products</span></h5>"
           customHeader
         >
           <div class="table-resposive">
@@ -32,7 +31,12 @@
                   <td><a target="_blank" :href="row.link">{{row.textoLink}}</a></td>
                   <td>{{row.value}}</td>
                   <td>{{row.date}}</td>
-                  <td>{{row.active}}</td>
+                  <td>
+                    <label class="switch">
+                    <input type="checkbox" :checked="row.active">
+                    <span class="slider round"></span>
+                    </label>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -61,7 +65,7 @@ export default {
           link: 'https://www.amazon.es/Divertido-meme-Shiba-Doge-Camiseta/dp/B09FYVK59B/ref=sr_1_3?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=GHJY6HHTLLFE&keywords=doge&qid=1655746187&s=apparel&sprefix=doge%2Capparel%2C88&sr=1-3',
           name: 'Doge Bread',  
           value: 16.49,
-          date: new Date('September 14, 2018'),        
+          date: new Date('September 14, 2018').toDateString(),      
           active: true
         },
       ],

@@ -4,7 +4,6 @@
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>Cryptos</span></h5>"
           customHeader
         >
           <div class="table-resposive">
@@ -35,7 +34,8 @@
                   </td>
                   <td>{{row.value}}</td>
                   <td>{{row.lastValue}}</td>
-                  <td>{{row.diff}}</td>
+                  <td v-if="(row.value - row.lastValue) > 0"><label style="color:green">{{row.value - row.lastValue}}</label></td>
+                  <td v-if="(row.value - row.lastValue) < 0"><label style="color:red">{{row.value - row.lastValue}}</label></td>
                   <td>{{row.date}}</td>
                 </tr>
               </tbody>
@@ -62,10 +62,9 @@ export default {
           id: 1,
           picture: 'https://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png', // eslint-disable-line global-require
           name: 'Bitcoin',  
-          value: 24,
-          lastValue: 12,
-          diff: this.value - this.lastValue,
-          date: new Date('September 14, 2018')        
+          value: 25874,
+          lastValue: 12567,
+          date: new Date('September 14, 2018').toDateString()      
         },
       ],
     };

@@ -4,7 +4,6 @@
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>Fiats</span></h5>"
           customHeader
         >
           <div class="table-resposive">
@@ -31,7 +30,6 @@
                   <td>
                     {{row.name}}
                   </td>
-                  <td><a target="_blank" :href="row.link">{{row.textoLink}}</a></td>
                   <td>{{row.value}}</td>
                   <td>{{row.date}}</td>
                 </tr>
@@ -60,7 +58,7 @@ export default {
           picture: 'https://pngimg.com/uploads/dollar_sign/dollar_sign_PNG5.png',
           name: 'Dollar',  
           value: 1,
-          date: new Date('September 14, 2018')
+          date: new Date('September 14, 2018').toDateString()
         },
       ],
     };
