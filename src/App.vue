@@ -17,9 +17,10 @@ export default {
     this.fetchProducts()
     this.fetchFiats()
     this.fetchGames()
+    this.fetchNFTs()
   },
   methods: {
-    ...mapActions(["fetchCryptos", "fetchProducts", "fetchFiats", "fetchGames"])
+    ...mapActions(["fetchCryptos", "fetchProducts", "fetchFiats", "fetchGames", "fetchNFTs"])
   },
 };
 </script>
