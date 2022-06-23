@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const resourceURI = "https://cryptoapisv.azurewebsites.net/Crypto";
+const resourceURI = "https://pro-cryptoapi.azurewebsites.net/Crypto";
 
 const state = {
     cryptos: []
