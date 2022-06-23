@@ -7,6 +7,7 @@ import Products from '@/pages/Products/Products';
 import Fiats from '@/pages/Fiats/Fiats';
 import NFTs from '@/pages/NFTs/NFTs';
 import Games from '@/pages/Games/Games';
+import Converter from '@/pages/Converter/Converter';
 import Home from '@/pages/Visits/Visits';
 import ErrorPage from '@/pages/Error/Error';
 
@@ -54,6 +55,11 @@ export default new Router({
           path: 'nfts',
           name: 'NFTs',
           component: NFTs,
+        },
+        {
+          path: 'converter',
+          name: 'Converter',
+          component: Converter,
         },
       ],
     },
