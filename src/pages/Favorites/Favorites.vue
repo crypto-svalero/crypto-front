@@ -1,13 +1,13 @@
 <template>
-  <div class="crypto">
+  <div class="favorite">
     <div class="crypto__header">
-      <h2 class="page-title"><span class="fw-semi-bold">Cryptos</span></h2>
-      <b-badge variant="success">See favorites</b-badge>
+      <h2 class="page-title"><span class="fw-semi-bold">Favorites</span></h2>
     </div>
     <b-row>
       <b-col>
         <Widget customHeader>
-          <div class="table-resposive">
+          <h5 v-if="!favorites">&#128557; No favorites found!</h5>
+          <div class="table-resposive" v-if="favorites">
             <table class="table">
               <thead>
                 <tr>
@@ -22,7 +22,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="crypto in cryptos" :key="crypto.id">
+                <tr v-for="crypto in cryptoFavorites" :key="crypto.id">
                   <td>{{ crypto.id }}</td>
                   <td class="star-rating">
                     <a href="#" @click="setFavorite(crypto.id)" :class="`${crypto.favourite ? 'favorite__icon--is-favorite' : 'favorite__icon'}`">★</a>
@@ -62,14 +62,17 @@
 </template>
 
 <script>
-import Widget from '@/components/Widget/Widget';
-import Sparklines from '../../components/Sparklines/Sparklines'
-import { mapGetters } from 'vuex';
+import Widget from "@/components/Widget/Widget";
+import Sparklines from "../../components/Sparklines/Sparklines";
+import { mapGetters } from "vuex";
 import { mapActions } from 'vuex';
 
 export default {
-  name: "Cryptos",
+  name: "Favorites",
   components: { Widget, Sparklines },
+  props: {
+    isFavorite: Boolean
+  },
   methods: {
     ...mapActions(["cryptoAsFavorite"]),
     parseDate(date) {
@@ -87,8 +90,12 @@ export default {
   },
   computed: {
     ...mapGetters(["cryptos"]),
+    favorites() {
+      const favorites = this.cryptos.filter(crypto => crypto.favourite);
+      return (favorites.length === 0 ? null : favorites);
+    }
   },
 };
 </script>
 
-<style src="./Cryptos.scss" lang="scss" scoped />
+<style src="./Favorites.scss" lang="scss" scoped />

@@ -1,11 +1,15 @@
 @import '../../styles/app';
 
+.widget-body h5 {
+  margin-bottom: 0;
+}
+
 .crypto {
   &__header {
     display: flex;
     margin: 0 0 calc(1rem + 6px);
   }
-
+  
   .page-title {
     margin: 0;
   }
@@ -34,8 +38,8 @@
   $selected: #F39C12;
   
   .favorite__icon--is-favorite {
-    color: $selected;
-}
+    color: #F39C12;
+  }
   
   a {
     width: $size;
