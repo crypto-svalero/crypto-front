@@ -8,7 +8,7 @@ import Fiats from '@/pages/Fiats/Fiats';
 import NFTs from '@/pages/NFTs/NFTs';
 import Games from '@/pages/Games/Games';
 import Converter from '@/pages/Converter/Converter';
-import Home from '@/pages/Visits/Visits';
+import Home from '@/pages/Home/Home';
 import Favorites from '@/pages/Favorites/Favorites';
 import ErrorPage from '@/pages/Error/Error';
 

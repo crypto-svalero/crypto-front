@@ -4,7 +4,7 @@
     :class="{sidebar: true}"
   >
     <header class="logo">
-      <router-link to="/app/home">Proyect <span class="fw-b  old">Cryptos</span></router-link>
+      <router-link to="/app/home">Crypto App</router-link>
     </header>
 
     <ul class="nav">
