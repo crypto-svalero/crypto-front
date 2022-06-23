@@ -1,3 +1,5 @@
+#!/bin/bash
+
 FROM node:14.19.3
 RUN npm install -g http-server
 WORKDIR /app
