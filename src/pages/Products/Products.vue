@@ -15,7 +15,6 @@
                   <th>Name</th>
                   <th>Link</th>
                   <th class="hidden-sm-down">Last Modified Date</th>
-                  <th class="hidden-sm-down">Active</th>
                 </tr>
               </thead>
               <tbody>
@@ -27,15 +26,8 @@
                   <td>
                     {{product.name}}
                   </td>
-                  <td>Link</td>
-                  <!-- <td><a target="_blank" :href="row.link">{{product.textoLink}}</a></td> -->
+                  <td><a target="_blank" :href="product.url">See product</a></td>
                   <td>{{parseDate(product.creationDate)}}</td>
-                  <td>
-                    <label class="switch">
-                    <input type="checkbox" :checked="product.active">
-                    <span class="slider round"></span>
-                    </label>
-                  </td>
                 </tr>
               </tbody>
             </table>
