@@ -57,6 +57,16 @@
         isHeader
       />
     </ul>
+    <ul class="nav">
+      <NavLink
+        :activeItem="activeItem"
+        header="Converter"
+        link="/app/converter"
+        iconName="flaticon-extra"
+        index="home"
+        isHeader
+      />
+    </ul>
   </nav>
   </b-collapse>
 </template>
