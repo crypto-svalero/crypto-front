@@ -26,8 +26,7 @@
                   <td>
                     {{game.name}}
                   </td>
-                  <td>Link</td>
-                  <!-- <td><a target="_blank" :href="row.link">{{row.textoLink}}</a></td> -->
+                  <td><a target="_blank" :href="game.url">See game</a></td>
                   <td>{{parseDate(game.creationDate)}}</td>
                 </tr>
               </tbody>

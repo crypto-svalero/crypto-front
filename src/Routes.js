@@ -9,6 +9,7 @@ import NFTs from '@/pages/NFTs/NFTs';
 import Games from '@/pages/Games/Games';
 import Converter from '@/pages/Converter/Converter';
 import Home from '@/pages/Visits/Visits';
+import Favorites from '@/pages/Favorites/Favorites';
 import ErrorPage from '@/pages/Error/Error';
 
 Vue.use(Router);
@@ -30,6 +31,11 @@ export default new Router({
           path: 'home',
           name: 'Home',
           component: Home,
+        },
+        {
+          path: 'favorites',
+          name: 'Favorites',
+          component: Favorites,
         },
         {
           path: 'cryptos',

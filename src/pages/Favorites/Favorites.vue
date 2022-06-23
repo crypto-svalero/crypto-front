@@ -1,12 +1,13 @@
 <template>
-  <div class="crypto">
+  <div class="favorite">
     <div class="crypto__header">
-      <h2 class="page-title"><span class="fw-semi-bold">Cryptos</span></h2>
+      <h2 class="page-title"><span class="fw-semi-bold">Favorites</span></h2>
     </div>
     <b-row>
       <b-col>
         <Widget customHeader>
-          <div class="table-resposive">
+          <h5 v-if="!favourites">&#128557; No favorites found!</h5>
+          <div class="table-resposive" v-if="favourites">
             <table class="table">
               <thead>
                 <tr>
@@ -21,7 +22,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="crypto in cryptos" :key="crypto.id">
+                <tr v-for="crypto in favourites" :key="crypto.id">
                   <td>{{ crypto.id }}</td>
                   <td class="star-rating">
                     <a href="#" @click="setFavorite(crypto.id)" :class="`${crypto.favourite ? 'favorite__icon--is-favorite' : 'favorite__icon'}`">★</a>
@@ -61,14 +62,17 @@
 </template>
 
 <script>
-import Widget from '@/components/Widget/Widget';
-import Sparklines from '../../components/Sparklines/Sparklines'
-import { mapGetters } from 'vuex';
+import Widget from "@/components/Widget/Widget";
+import Sparklines from "../../components/Sparklines/Sparklines";
+import { mapGetters } from "vuex";
 import { mapActions } from 'vuex';
 
 export default {
-  name: "Cryptos",
+  name: "Favorites",
   components: { Widget, Sparklines },
+  props: {
+    isFavorite: Boolean
+  },
   methods: {
     ...mapActions(["cryptoAsFavorite"]),
     parseDate(date) {
@@ -79,15 +83,19 @@ export default {
 
       return `${day}-${month}-${year}`;
     },
-    setFavorite(cryptoId) {
+    setFavourite(cryptoId) {
       this.isFavorite = !this.isFavorite;
       this.cryptoAsFavorite(cryptoId);
     },
   },
   computed: {
     ...mapGetters(["cryptos"]),
+    favourites() {
+      const favourite = this.cryptos.filter(crypto => crypto.favourite);
+      return (favourite.length === 0 ? null : favourite);
+    }
   },
 };
 </script>
 
-<style src="./Cryptos.scss" lang="scss" scoped />
+<style src="./Favorites.scss" lang="scss" scoped />
