@@ -26,8 +26,6 @@ const actions = {
     async cryptoAsFavorite( { commit }, cryptoId) {
         const response = await axios.put(`${resourceURI}?id=${cryptoId}`);
         commit('setCryptoAsFavorite', response.data);
-        console.log(cryptoId);
-        console.log(response);
     },
 };
 

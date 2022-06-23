@@ -6,8 +6,8 @@
     <b-row>
       <b-col>
         <Widget customHeader>
-          <h5 v-if="!favorites">&#128557; No favorites found!</h5>
-          <div class="table-resposive" v-if="favorites">
+          <h5 v-if="!favourites">&#128557; No favorites found!</h5>
+          <div class="table-resposive" v-if="favourites">
             <table class="table">
               <thead>
                 <tr>
@@ -22,7 +22,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="crypto in cryptoFavorites" :key="crypto.id">
+                <tr v-for="crypto in favourites" :key="crypto.id">
                   <td>{{ crypto.id }}</td>
                   <td class="star-rating">
                     <a href="#" @click="setFavorite(crypto.id)" :class="`${crypto.favourite ? 'favorite__icon--is-favorite' : 'favorite__icon'}`">★</a>
@@ -83,16 +83,16 @@ export default {
 
       return `${day}-${month}-${year}`;
     },
-    setFavorite(cryptoId) {
+    setFavourite(cryptoId) {
       this.isFavorite = !this.isFavorite;
       this.cryptoAsFavorite(cryptoId);
     },
   },
   computed: {
     ...mapGetters(["cryptos"]),
-    favorites() {
-      const favorites = this.cryptos.filter(crypto => crypto.favourite);
-      return (favorites.length === 0 ? null : favorites);
+    favourites() {
+      const favourite = this.cryptos.filter(crypto => crypto.favourite);
+      return (favourite.length === 0 ? null : favourite);
     }
   },
 };

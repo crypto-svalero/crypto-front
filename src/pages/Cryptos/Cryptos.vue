@@ -2,7 +2,6 @@
   <div class="crypto">
     <div class="crypto__header">
       <h2 class="page-title"><span class="fw-semi-bold">Cryptos</span></h2>
-      <b-badge variant="success">See favorites</b-badge>
     </div>
     <b-row>
       <b-col>

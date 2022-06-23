@@ -4,9 +4,9 @@
       <span class="glyphicon glyphicon-heart" />
     </template>
     <h5 class="favorites__title">My favorites</h5>
-    <p class="favorites__message" v-if="!favorites">&#128557; No favorites found!</p>
-    <div v-if="favorites">
-    <b-dropdown-item v-for="crypto in favorites" :key="crypto.id">
+    <p class="favorites__message" v-if="!favourites">&#128557; No favorites found!</p>
+    <div v-if="favourites">
+    <b-dropdown-item v-for="crypto in favourites" :key="crypto.id">
       <img class="favorites__image" :src="crypto.image" :alt="crypto.name" />
       <span class="fs-sm">{{ crypto.name }}</span>
     </b-dropdown-item>
@@ -35,9 +35,10 @@ export default {
   },
   computed: {
     ...mapGetters(["cryptos"]),
-    cryptoFavorites() {
-      const favorites = this.cryptos.filter(crypto => crypto.favourite);
-      return (favorites.length === 0 ? null : favorites);
+    favourites() {
+      const favourites = this.cryptos.filter(crypto => crypto.favourite);
+      console.log(favourites);
+      return (favourites.length === 0 ? null : favourites);
     }
   },
 };
