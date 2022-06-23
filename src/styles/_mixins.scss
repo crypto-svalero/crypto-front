@@ -1,10 +1,13 @@
-/**
- * Custom application mixins available through out the app
- */
+@mixin heightWidthZero {
+  width: 0;
+  height: 0;
+}
 
-// define sass mixin
-// Generates single property classes
-// -------------------------
+@mixin styleIcon {
+  margin:10px;
+  cursor: pointer;
+}
+
 @mixin property-variants($base, $property, $variants: ()) {
   @each $size, $value in $variants {
     @if $size == 'md' {
