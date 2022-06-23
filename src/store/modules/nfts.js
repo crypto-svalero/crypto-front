@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const resourceURI = "https://cryptoapisv.azurewebsites.net/NFT";
+const resourceURI = "https://pro-cryptoapi.azurewebsites.net/NFT";
 
 const state = {
     nfts: []
