@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const resourceURI = "https://cryptoapisv.azurewebsites.net/Fiat";
+const resourceURI = "https://pro-cryptoapi.azurewebsites.net/Fiat";
 
 const state = {
     fiats: []
